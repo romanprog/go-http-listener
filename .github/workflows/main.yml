@@ -10,7 +10,7 @@ jobs:
       id: reconcile
       uses: shalb/cluster.dev@master
       with:
-        cluster-config: './.cluster.dev/minikube-one.yaml'
+        cluster-config: './.cluster.dev/minikube-a.yaml'
         cloud-user: ${{ secrets.aws_access_key_id }}
         cloud-pass: ${{ secrets.aws_secret_access_key }}
     - name: Get the execution status
