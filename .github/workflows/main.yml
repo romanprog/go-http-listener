@@ -1,0 +1,17 @@
+on: [push]
+jobs:
+  deploy_cluster_job:
+    runs-on: ubuntu-latest
+    name: Deploy and Update K8s Cluster
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v1
+    - name: Reconcile Clusters
+      id: reconcile
+      uses: shalb/cluster.dev@master
+      with:
+        cluster-config: './.cluster.dev/minikube-one.yaml'
+        cloud-user: ${{ secrets.aws_access_key_id }}
+        cloud-pass: ${{ secrets.aws_secret_access_key }}
+    - name: Get the execution status
+      run: echo "The status ${{ steps.validate.reconcile.status }}"
