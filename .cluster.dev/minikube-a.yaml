@@ -1,8 +1,0 @@
-cluster:
-  name: minikube-arti
-  cloud: 
-    provider: aws
-    region: eu-central-1
-  provisioner:
-    type: minikube
-    instanceType: "m4.large"
