@@ -16,4 +16,4 @@ jobs:
       id: atest
       uses: romanprog/megaaction@master
       with:
-        helo-name: 'Arti' 
+        helo-n: 'Arti' 
